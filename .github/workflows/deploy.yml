@@ -20,11 +20,11 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
          script: |
-           if [ -d "/var/www/html/static" ]; then
-             echo "Folder sudah ada, update..."
-           else
-             mkdir -p /var/www/html/static
-           fi
-           rsync -avz --delete ./ /var/www/html/static/
-           systemctl restart nginx
-            
+           cd /root
+            if [ ! -d "projectku" ]; then
+              git clone https://github.com/ayudyah29/<nama-repo-kamu>.git projectku
+            else
+              cd projectku
+              git pull origin main
+            fi
+            echo "✅ Deploy selesai!"
