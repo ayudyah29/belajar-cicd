@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -19,8 +20,8 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
-         script: |
-           cd /root
+          script: |
+            cd /root
             if [ ! -d "projectku" ]; then
               git clone https://github.com/ayudyah29/belajar-cicd.git
             else
