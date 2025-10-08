@@ -23,7 +23,7 @@ jobs:
             cd ${{ secrets.PROJECT_PATH }}
             git pull origin main
             echo "✅ Deploy selesai!"
-              git clone https://github.com/ayudyah29/<nama-repo-kamu>.git projectku
+              git clone https://github.com/ayudyah29/belajar-cicd.git 
             else
               cd projectku
               git pull origin main
