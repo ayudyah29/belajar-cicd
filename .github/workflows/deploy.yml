@@ -28,4 +28,5 @@ jobs:
               cd projectku
               git pull origin main
             fi
-            echo "✅ Deploy selesai!"
+            systemctl restart nginx || true 
+            echo "✅ Deploy selesai & Nginx direstart!"
